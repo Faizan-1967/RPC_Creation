@@ -1,16 +1,19 @@
 {
   "files":[
-    "src/index.ts",
-    "src/RPCs/fetchLeaderBoardRpc.ts",
-    "src/RPCs/postMatchRpc.ts",
-    "src/RPCs/authRpc.ts",
-    "src/RPCs/storageRpc.ts",
-    "src/Utilities/auth_utils.ts",
-    "src/Utilities/interface_utils.ts",
-    "src/Utilities/default_user_utils.ts",
-    "src/Utilities/constants_utils.ts",
-    "src/Modules/storage_module.ts",
-    "src/Modules/leaderboard_module.ts"
+    "src/main.ts",
+    "src/Modules/Authentication/AuthInterface.ts",
+    "src/Modules/Authentication/auth_utils.ts",
+    "src/Modules/Authentication/authRpc.ts",
+    "src/Modules/UserState/storageRpc.ts",
+    "src/Modules/UserState/State.ts",
+    "src/Modules/UserState/default_user_utils.ts",
+    "src/Modules/constants_utils.ts",
+    "src/Utilities/storage_module.ts",
+    "src/Modules/LeaderBoard/leaderboard_module.ts",
+    "src/Modules/LeaderBoard/fetchLeaderBoardRpc.ts",
+    "src/Modules/LeaderBoard/LeaderboardInterface.ts",
+    "src/Modules/MatchEnd/postMatchRpc.ts",
+    "src/Modules/MatchEnd/MatchEndInterface.ts"
   ],
 
   "compilerOptions": {

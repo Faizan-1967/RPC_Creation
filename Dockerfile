@@ -9,8 +9,10 @@ COPY tsconfig.json .
 COPY src/*.ts src/
 COPY src/Utilities/*.ts src/Utilities/
 COPY src/Modules/*.ts src/Modules/
-COPY src/RPCs/*.ts src/RPCs/
-
+COPY src/Modules/Authentication/*.ts src/Modules/Authentication/
+COPY src/Modules/LeaderBoard/*.ts src/Modules/LeaderBoard/
+COPY src/Modules/UserState/*.ts src/Modules/UserState/
+COPY src/Modules/MatchEnd/*.ts src/Modules/MatchEnd/
 RUN npx tsc
 
 FROM registry.heroiclabs.com/heroiclabs/nakama:3.22.0

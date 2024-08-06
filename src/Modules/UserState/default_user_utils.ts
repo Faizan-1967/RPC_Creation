@@ -2,7 +2,7 @@ class defaultUtils{
 
     constructor(){
     }
-     public setUserState(nk:nkruntime.Nakama ,userId:string, userState:IUStates ):void{
+     public setUserState(nk:nkruntime.Nakama ,userId:string, userState:IuserState ):void{
        if(!userState.coins){
         userState.coins = Default_COINS;
        }

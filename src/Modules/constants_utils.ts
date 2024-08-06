@@ -9,3 +9,10 @@ const Default_level=1;
 
 const USER_COLLECTION = "July_Tournament";
 const USER_STATE_KEY = "J_123";
+
+interface Iresponse 
+{
+   success:boolean
+   errorCode?:string
+   message:string
+}

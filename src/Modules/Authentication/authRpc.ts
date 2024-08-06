@@ -1,7 +1,11 @@
 let emailAuthRpc: nkruntime.RpcFunction = function (ctx: nkruntime.Context, logger: nkruntime.Logger, nk: nkruntime.Nakama, payload: string): string {
     try {
+        var response:IauthRes;
+
+
         var obj = new authUtils();
-        const payloadJson = JSON.parse(payload);
+        const payloadJson:IauthReq = JSON.parse(payload);
+
        //to validate email
        if( !(obj.isValidEmail(payloadJson.email))){
         return JSON.stringify({
@@ -27,19 +31,25 @@ let emailAuthRpc: nkruntime.RpcFunction = function (ctx: nkruntime.Context, logg
         const storageObj:nkruntime.StorageObject[] =new storageUtils().readObject(nk,USER_COLLECTION,USER_STATE_KEY,res.userId);
 
         if(storageObj.length <=0){
-            new defaultUtils().setUserState(nk,res.userId,{});
+            new defaultUtils().setUserState(nk,res.userId,{coins:100,xp:20,level:1,health:100});
         }
         
-        return JSON.stringify({
-            "message":"User Authenticated",
-            "user": JSON.parse(payload)
-        });
-    
-    } catch (e:any) {
-        return JSON.stringify({
-            "errorMessage": e.message,
-            "payload": JSON.parse(payload)
-        });
-}
+        response =
+        {
+            success:true,
+            message:"User has been authenticated",
+            userId:res.userId,
+            data: storageObj[0].value
+        }
+    } 
+    catch (e:any) {
+        response =
+        {     
+            success:false,
+            message:e.message,
+            userId:ctx.userId
+        }
+     }
+     return JSON.stringify(response);
 };
 
