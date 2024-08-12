@@ -6,14 +6,17 @@
     "src/Modules/Authentication/authRpc.ts",
     "src/Modules/UserState/storageRpc.ts",
     "src/Modules/UserState/State.ts",
-    "src/Modules/UserState/default_user_utils.ts",
+    "src/Modules/UserState/StateUtils.ts",
     "src/Modules/constants_utils.ts",
     "src/Utilities/storage_module.ts",
     "src/Modules/LeaderBoard/leaderboard_module.ts",
     "src/Modules/LeaderBoard/fetchLeaderBoardRpc.ts",
     "src/Modules/LeaderBoard/LeaderboardInterface.ts",
     "src/Modules/MatchEnd/postMatchRpc.ts",
-    "src/Modules/MatchEnd/MatchEndInterface.ts"
+    "src/Modules/MatchEnd/MatchEndInterface.ts",
+    "src/Modules/Configuration/ConfigurationRpc.ts",
+    "src/Modules/Configuration/ConfigurationModule.ts",
+    "src/Modules/Configuration/ConfigurationInterface.ts"
   ],
 
   "compilerOptions": {

@@ -2,18 +2,17 @@ let postMatchRpc:nkruntime.RpcFunction = function(ct:nkruntime.Context , logger:
    
     const jsonPayload:ImatchReq = JSON.parse(payload);
     var response:ImatchResponse;
+
     try{
         const leaderBoardId:string = GLOBAL_LEADERBOARD.toString();
         let  metaData = {"Hello":"nothing"}
 
-        const resp:nkruntime.LeaderboardRecord =  nk.leaderboardRecordWrite(leaderBoardId,ct.userId , ct.username , jsonPayload.userState.coins ,0 , metaData);
-        
+        const resp:nkruntime.LeaderboardRecord =  nk.leaderboardRecordWrite(leaderBoardId,ct.userId , ct.username , jsonPayload.userState.coins ,0 , metaData);  
         response = {
             success:true,
-            message:"Record entered successfully",
+            message:"Record entered successfully in the leaderboard",
             data:resp
         }
-
     }catch(error:any){
         response = {
             message:error.message,

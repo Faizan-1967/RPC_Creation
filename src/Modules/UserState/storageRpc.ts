@@ -1,14 +1,15 @@
 function storageRpc(ct:nkruntime.Context, logger:nkruntime.Logger, nk:nkruntime.Nakama, payload:string ):string{
   
    let value:any={
-    coins:Default_COINS,
-    xp:Default_xp,
-    health:Default_health,
-    level:Default_level
+    coins:DEFAULT_COINS,
+    xp:DEFAULT_XP,
+    health:DEFAULT_HEALTH,
+    level:DEFAULT_LEVEL
+
    }
 
  try{
-      new storageUtils().writeObject(nk,USER_COLLECTION,USER_STATE_KEY,ct.userId,value);{
+      new StorageUtils().WriteObject(nk,PLAYER_COLLECTION,PLAYER_STATE_KEY,ct.userId,value);{
       return JSON.stringify({
         "messege": "Data Stored Successfully"
       })

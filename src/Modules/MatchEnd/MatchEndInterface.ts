@@ -1,5 +1,5 @@
 
-interface ImatchResponse extends Iresponse
+interface ImatchResponse extends IResponse
 {
     data?:any
 }

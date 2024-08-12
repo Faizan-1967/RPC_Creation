@@ -3,5 +3,6 @@ interface IuserState {
     coins: number
     level: number
     health:number
+    games:number
 }
 

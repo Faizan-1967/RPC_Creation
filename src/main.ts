@@ -4,8 +4,14 @@ function InitModule(ctx: nkruntime.Context, logger: nkruntime.Logger, nk: nkrunt
    initializer.registerRpc("setDefaultState", storageRpc );
    initializer.registerRpc("getLeaderBoard", fetchLeaderBoardRpc );
    initializer.registerRpc("postLeaderBoard", postMatchRpc);
-
-   new leaderBoardCreation().createGlobalLeaderBoard(nk);
+   initializer.registerRpc("configuration", getConfigRpc);
+   try{
+    new ConfigurationModule().saveConfigurations(nk);
+   }
+   catch(E:any){
+      logger.debug("Configuration Issue");
+   }
+   new LeaderBoard().CreateLeaderBoard(nk);
 
     logger.debug("Hello World!");
 }

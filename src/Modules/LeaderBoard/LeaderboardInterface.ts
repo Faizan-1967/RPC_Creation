@@ -1,4 +1,4 @@
-interface ILeaderBoardResponse  extends Iresponse {
+interface ILeaderBoardResponse  extends IResponse {
     data?: any
 }
 

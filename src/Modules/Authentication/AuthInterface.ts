@@ -1,4 +1,4 @@
-interface IauthRes extends Iresponse{
+interface IauthRes extends IResponse{
     userId: string,
     data?:any
 }

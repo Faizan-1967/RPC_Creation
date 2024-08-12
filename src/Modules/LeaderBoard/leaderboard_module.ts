@@ -1,6 +1,6 @@
-class leaderBoardCreation{
+class LeaderBoard{
 
-    public createGlobalLeaderBoard(nk:nkruntime.Nakama){
+    public CreateLeaderBoard(nk:nkruntime.Nakama){
 
         let id = GLOBAL_LEADERBOARD;
         let order = nkruntime.SortOrder.DESCENDING;
